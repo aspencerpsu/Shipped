@@ -20,16 +20,14 @@ class JobsController < ApplicationController
   end
 
   def show
-    @boat = Boat.find_by(id: params[:boat_id])
-    @job = @boat.jobs.find_by(id: params[:job_id])
+    @job = Job.find_by(id: params[:id])
   end
 
   def destroy
     @user = current_user
-    @boat = Boat.find(params[:boat_id])
-    @job = @boat.jobs.find_by(id: params[:job_id])
+    @job = Job.find_by(id: params[:id])
     if @job
-      @job.delete
+      @job.destroy
       flash[:notice] = "Successfully deleted this job"
       redirect_to @user
     end

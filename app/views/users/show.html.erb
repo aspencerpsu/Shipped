@@ -19,7 +19,7 @@
 		<% if boat.jobs.nil? == false %>
 			<h4><%= boat.name %>'s jobs </h4>
 			<h4><% boat.jobs.each do |job| %></h4>
-				<h4><%= link_to "See This Job", boat_job_path(boat_id: boat.id, job_id: job.id) %></h4>
+				<h4><%= link_to "See This Job", boat_job_path(boat_id: boat.id, id: job.id) %></h4>
 				<h4><%= job.cargo %></h4>
 				<h4><%= job.destination %></h4>
 				<h4><%= job.boat_id %></h4>

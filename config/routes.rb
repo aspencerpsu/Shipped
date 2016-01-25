@@ -25,7 +25,7 @@ Rails.application.routes.draw do
       resources :jobs
     end
 
-    delete '/boats/:boat_id/jobs/:id', to: 'jobs#destroy', as: :jobdestroy
+    # delete '/boats/:boat_id/jobs/:id', to: 'jobs#destroy', as: :jobdestroy
 
     resources :sessions
 

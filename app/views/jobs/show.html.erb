@@ -8,5 +8,5 @@
 <h2><%= @job.price %></h2>
 <h2><%= @job.containers %></h2>
 
-<%= link_to "Delete This Job?", :jobdestroy %>
-
+<%= link_to "Delete This Job?", boat_job_path, method: :delete %>
+<%= link_to "Retun To Show Page?", user_path %>
