@@ -1,0 +1,6 @@
+<h1><%= @user.username %>'s</h1>
+
+<h1>Edit your profile details</h1>
+
+<%= form_for(@user, user_path, method: :put) do |f| %>
+

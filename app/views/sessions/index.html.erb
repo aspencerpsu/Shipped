@@ -1,0 +1,29 @@
+<h1>Signup</h1>
+
+<%= form_for @user, :html => { :multipart => true }  do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<%= f.label :email %>
+	<%= f.text_field :email %>
+	<%= f.label :password %>
+	<%= f.password_field :password %>
+	<%= f.label :password_confirmation %>
+	<%= f.password_field :password_confirmation %>
+	<br>
+	<br>
+	<%= f.label :MakeAvi %>
+	<%= f.file_field :avatar %>
+	<br>
+	<br>
+	<%= f.submit "submit!" %>
+<% end %>
+
+<h1>Login</h1>
+
+<%= form_tag sessions_path do %>
+	<%= label_tag :email %>
+	<%= text_field_tag :email %>
+	<%= label_tag :password %>
+	<%= password_field_tag :password %>
+	<%= submit_tag :submit! %>
+<% end %>

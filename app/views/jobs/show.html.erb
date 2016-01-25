@@ -1,0 +1,12 @@
+<h1>The Job</h1>
+
+<% @boat %>
+
+<h2><%= @job.name %></h2>
+<h2><%= @job.cargo %></h2>
+<h2><%= @job.destination %></h2>
+<h2><%= @job.price %></h2>
+<h2><%= @job.containers %></h2>
+
+<%= link_to "Delete This Job?", :jobdestroy %>
+

@@ -1,0 +1,19 @@
+<% if @job.nil? == false %>
+	<h1>Create a new job for <%= @boat.name %>! </h1>
+	<%= form_for [@boat,@job] do |f| %>
+		<%= f.label(:name) %>
+		<%= f.text_field(:name) %>
+		<%= f.label(:destination) %>
+		<%= f.select(:destination, ["Parrot Bay", "Pirate Bay", "Angel Island", "Ellis Island"].collect {|p|  p }, {include_blank: 'None'}) %>
+	  <%= f.label :cargo %>
+	  <%= f.text_area :cargo, size: "60x12" %>
+	  <%= f.label :price %>
+	  <%= f.number_field :price, {scale: 2, :step => '0.01'}%>
+	  <%= f.label :containers %>
+	  <%= f.number_field :containers %>
+	  <%= f.submit "create a job" %>
+	<% end %>
+<% else %>
+	<h1>Make a boat in order to assign a new job</h1>
+<% end %>
+

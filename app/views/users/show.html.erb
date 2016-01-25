@@ -1,0 +1,51 @@
+<h1>Welcome To The Love Boat Transportation Services!</h1>
+<%= link_to "All The Boats", boats_path %>
+
+<h1>Welcome <%= @user.name %></h1>
+<h1><%= @user.name %>'s Boats:</h1>
+
+	<%= image_tag @user.avatar.url(:medium) %>
+
+<% if @boats %>
+	<% @boats.each do |boat|  %>
+		<h4><%= boat.name %></h4>
+		<h4><%= boat.capacity %></h4>
+		<h4><%= boat.location %></h4>
+		<h4><%= link_to "Edit Boat?", edit_boat_path(boat) %></h4>
+
+		<hr>
+		<hr>
+
+		<% if boat.jobs.nil? == false %>
+			<h4><%= boat.name %>'s jobs </h4>
+			<h4><% boat.jobs.each do |job| %></h4>
+				<h4><%= link_to "See This Job", boat_job_path(boat_id: boat.id, job_id: job.id) %></h4>
+				<h4><%= job.cargo %></h4>
+				<h4><%= job.destination %></h4>
+				<h4><%= job.boat_id %></h4>
+				<h4><%= '%.2f' % job.price %></h4>
+				<h4><%= job.containers %></h4>
+			<% end %>
+		<% else %>
+			<h3>No Jobs for this boat</h3>
+		<% end %>
+		
+		<%= link_to "Make a new job for this boat?", new_boat_job_path(boat.id) %>
+		<hr>
+		<hr>
+	<% end %>
+<% else %>
+	<h1>Make some boats</h1>
+<% end %>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<%= link_to "Make A New Boat?", new_boat_path %>
+
+<%= link_to "Logout?", '/logout' %>
+
+
+<p>Find me in app/views/users/show.html.erb</p>

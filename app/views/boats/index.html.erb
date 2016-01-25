@@ -1,0 +1,12 @@
+<h1>The Boats For All!</h1>
+<% @boats.each do |boat| %>
+	<ul>
+		<h1><%=boat.name %></h1>
+			<li><em style="font-size:20px"><%=boat.user.name %>'s Boat</em></li>
+			<li><%=label_tag(:capacity, "The Capacity:") %><%=boat.capacity %></li>
+			<li><%=label_tag(:location, "Current Location:") %><%=boat.location %></li>
+	</ul>
+<% end %>
+
+
+<p>Find me in app/views/boats/show.html.erb</p>

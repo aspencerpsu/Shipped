@@ -1,0 +1,16 @@
+<h1>Boats#edit</h1>
+
+<h1>Change Your Boat Settings</h1>
+
+<%= form_for @boat, method: :put do |boat| %>
+	<%= boat.label (:name) %>
+	<%= boat.text_field :name, {placeholder: "Create a different name"} %>
+	<%= boat.label :cargo %>
+	<%= boat.number_field :capacity %>
+	<%= boat.submit "save" %>
+<% end %>
+<!-- <p>Find me in app/views/boats/edit.html.erb</p> -->
+
+<%= link_to "Delete this Boat?", boat_path, method: :delete %>
+
+<%= link_to "Return to Home Page?", user_path %>

@@ -1,0 +1,13 @@
+<h1>Boats#new</h1>
+
+<h1>Create a new boat <%= @user.name %>!</h1>
+
+<%= form_for @boat do |boat| %>
+	<%=boat.label :name %>
+	<%=boat.text_field :name %>
+	<%=boat.label :location %>
+	<%=boat.select(:location, ["Parrot Bay","Pirate Bay", "Angel Island", "Ellis Island" ]) %>
+	<%= boat.label :capacity %>
+	<%= boat.select :capacity, options_for_select(0..500), { prompt: "No Limit" } %>
+	<%= boat.submit "Submit" %>
+<% end %>
